@@ -494,6 +494,18 @@ app.get('/login', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
+// Health check endpoint. Returns DB status when possible.
+app.get('/healthz', async (_req, res) => {
+  try {
+    // simple lightweight query
+    await pool.query('SELECT 1');
+    return res.json({ ok: true, db: true });
+  } catch (err) {
+    console.warn('Health check DB error:', err && err.message ? err.message : err);
+    return res.status(500).json({ ok: false, db: false, error: String(err && err.message ? err.message : err) });
+  }
+});
+
 app.post('/login', (req, res) => {
   const password = normalizeText(req.body.password);
 
