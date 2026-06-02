@@ -1003,13 +1003,19 @@ app.get('/lista', requireListPageAccess, (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'lista.html'));
 });
 
-initDatabase()
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Servidor rodando em http://localhost:${port}`);
-    });
-  })
-  .catch((error) => {
-    console.error('Falha ao inicializar o banco de dados:', error);
-    process.exit(1);
+// Initialize database but don't crash the process on failure (serverless environments
+// should not exit — allow static assets to be served even if DB is temporarily unavailable).
+initDatabase().catch((error) => {
+  console.error('Falha ao inicializar o banco de dados:', error && error.message ? error.message : error);
+});
+
+if (!isServerless) {
+  app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
   });
+} else {
+  console.log('Running in serverless mode; not calling app.listen()');
+}
+
+// Export app for serverless platforms to mount (Vercel / other adapters will use this).
+export default app;
