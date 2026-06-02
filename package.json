@@ -1,0 +1,22 @@
+{
+  "name": "safra-agricultores",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "convert-images": "node tools/convert-images.js",
+    "extract-colors": "node tools/extract-logo-colors.cjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.13.0",
+    "pg": "^8.13.1",
+    "sharp": "^0.34.5",
+    "jpeg-js": "^0.4.3"
+  }
+}

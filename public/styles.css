@@ -1,0 +1,182 @@
+/* =========================================================
+   Safra Agricultores — Cadastro e acesso
+   ========================================================= */
+
+.shell {
+  display: grid;
+  gap: 22px;
+}
+
+.hero {
+  display: grid;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(47, 108, 68, 0.08), rgba(197, 140, 52, 0.08)), var(--surface);
+}
+
+.hero .lead {
+  max-width: 56ch;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  align-content: center;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.auth-card {
+  width: min(100%, 560px);
+  margin-inline: auto;
+  padding: 32px;
+}
+
+.auth-card h1 {
+  max-width: 9ch;
+}
+
+.auth-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.auth-form .actions {
+  align-items: center;
+}
+
+.auth-form .actions button {
+  min-width: 140px;
+}
+
+.auth-form .message {
+  flex: 1 1 220px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 16px;
+}
+
+.form-section {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.form-section .section-header {
+  margin-bottom: 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-full {
+  grid-column: 1 / -1;
+}
+
+.form-grid label {
+  margin: 0;
+}
+
+/* Compact input styles for cadastro form */
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  padding: 8px 10px;
+  height: 36px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.96);
+}
+
+.form-grid textarea {
+  min-height: 68px;
+  height: auto;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-grid .actions {
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.form-grid .actions .message {
+  flex: 1 1 240px;
+}
+
+.form-grid .actions button {
+  min-width: 190px;
+}
+
+/* Standardize form action buttons */
+.form-grid .actions .btn,
+.auth-form .actions .btn {
+  height: 40px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  align-self: center;
+}
+
+@media (max-width: 780px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2,
+  .span-full {
+    grid-column: auto;
+  }
+
+  .auth-shell {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+
+  .form-grid .actions,
+  .auth-form .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-grid .actions button,
+  .auth-form .actions button {
+    width: 100%;
+  }
+
+  .form-grid .actions .message,
+  .auth-form .actions .message {
+    flex-basis: auto;
+  }
+}

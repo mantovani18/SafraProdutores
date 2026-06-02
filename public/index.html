@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produtores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-brand">
+          <img class="brand-logo" src="/img/Selmi_logo.jpg" alt="Selmi" />
+          <div>
+            <p class="eyebrow"><strong>Selmi</strong> — Safra Agricultores</p>
+            <h1>Cadastro de produtores</h1>
+            <p class="lead">Cadastre nome, cidade, CPF, CNPJ e outros dados do produtor e salve tudo no PostgreSQL.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <form id="producerForm" class="form-grid">
+          <label>
+            <span>Nome completo *</span>
+            <input name="nome_completo" type="text" placeholder="Ex.: João da Silva" required />
+          </label>
+
+          <label>
+            <span>Cidade *</span>
+            <input name="cidade" type="text" placeholder="Ex.: Primavera do Leste" required />
+          </label>
+
+          <label>
+            <span>CPF</span>
+            <input name="cpf" type="text" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="000.000.000-00" />
+          </label>
+
+          <label>
+            <span>CNPJ</span>
+            <input name="cnpj" type="text" inputmode="numeric" autocomplete="off" maxlength="18" placeholder="00.000.000/0001-00" />
+          </label>
+
+          <label>
+            <span>Telefone</span>
+            <input name="telefone" type="text" inputmode="numeric" autocomplete="off" maxlength="15" placeholder="(00) 00000-0000" />
+          </label>
+
+          <label>
+            <span>E-mail</span>
+            <input name="email" type="email" placeholder="produtor@email.com" />
+          </label>
+
+          <label>
+            <span>Endereço</span>
+            <input name="endereco" type="text" placeholder="Rua, número, bairro" />
+          </label>
+
+          <label>
+            <span>Conta para depósito</span>
+            <input name="conta_para_deposito" type="text" placeholder="Banco, agência e conta" />
+          </label>
+
+          <label class="full-width">
+            <span>Observação</span>
+            <textarea name="observacao" rows="4" placeholder="Informações adicionais"></textarea>
+          </label>
+
+          <div class="actions full-width">
+            <button type="submit" class="btn btn-primary save-button">Salvar produtor</button>
+            <p id="message" class="message" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="form.js"></script>
+  </body>
+</html>

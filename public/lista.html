@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtores cadastrados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="styles-list.css" />
+  </head>
+  <body>
+    <main class="shell shell-wide">
+      <section class="hero hero-inline">
+        <div class="hero-brand hero-brand-inline">
+          <img class="brand-logo" src="/img/Selmi_logo.jpg" alt="Selmi" />
+          <div>
+            <p class="eyebrow"><strong>Selmi</strong> — Safra Agricultores</p>
+            <h1>Produtores cadastrados</h1>
+            <p class="lead">A lista mostra apenas o nome. Clique em um produtor para ver os dados completos e os contratos enviados.</p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="secondary-link btn btn-outline" href="/">Novo cadastro</a>
+          <button id="logoutButton" class="toolbar-button btn btn-outline btn-small" type="button">Sair</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>Lista de produtores</h2>
+          <p id="countText">Carregando...</p>
+        </div>
+        <div class="list-toolbar">
+          <input id="searchInput" class="search-input" type="search" placeholder="Buscar por nome, cidade ou documento" />
+          <button id="refreshButton" class="toolbar-button btn btn-outline btn-small" type="button">Atualizar lista</button>
+        </div>
+        <div id="producerList" class="table-wrap"></div>
+      </section>
+    </main>
+
+    <script src="list.js"></script>
+  </body>
+</html>

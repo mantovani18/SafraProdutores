@@ -1,0 +1,316 @@
+/* =========================================================
+   Safra Agricultores — Lista de produtores
+   ========================================================= */
+
+.shell-wide {
+  display: grid;
+  gap: 22px;
+}
+
+.hero-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  background: linear-gradient(135deg, rgba(47, 108, 68, 0.08), rgba(197, 140, 52, 0.08)), var(--surface);
+}
+
+.hero-inline > div:first-child {
+  min-width: 0;
+}
+
+.hero-actions {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-actions .btn,
+.hero-actions .secondary-link {
+  white-space: nowrap;
+}
+
+/* Make toolbar buttons consistent size and alignment */
+.hero-actions .btn,
+.hero-actions .secondary-link,
+.hero-actions .toolbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 8px 14px;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+/* Producer action buttons */
+.producer-actions .btn,
+.producer-actions .action-link,
+.producer-actions .toolbar-button {
+  min-width: 120px;
+  height: 36px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-header {
+  margin-bottom: 10px;
+}
+
+.list-header p {
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.list-toolbar {
+  margin-top: 18px;
+}
+
+.search-input {
+  min-width: 0;
+}
+
+.table-wrap {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.producer-card {
+  border-radius: 22px;
+}
+
+/* Highlight selected producer */
+.producer-card[open], .producer-card.selected {
+  border: 2px solid #2f6cdb; /* blue border for selection */
+  box-shadow: 0 6px 20px rgba(47,108,219,0.08);
+  transition: box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.producer-summary {
+  padding: 20px 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 242, 233, 0.96));
+}
+
+.producer-summary-name {
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+}
+
+.producer-panel {
+  display: grid;
+  gap: 20px;
+  padding: 0 24px 24px;
+}
+
+.producer-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.detail-item {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(47, 108, 68, 0.04);
+  border: 1px solid rgba(47, 108, 68, 0.06);
+}
+
+.detail-item-wide {
+  grid-column: span 2;
+}
+
+.detail-item-full {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.detail-value {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.editable-input {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 8px 10px;
+  height: 36px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.07);
+}
+
+.editable-input:focus {
+  background: #fff;
+  outline: 2px solid rgba(47,108,68,0.12);
+}
+
+textarea.editable-input {
+  min-height: 68px;
+  height: auto;
+  padding: 8px 10px;
+}
+
+.producer-product-section {
+  display: grid;
+  gap: 18px;
+  padding-top: 4px;
+}
+
+.producer-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contract-section {
+  display: grid;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.contract-section .section-header {
+  margin-bottom: 0;
+}
+
+.contract-section .section-header p {
+  max-width: 52ch;
+}
+
+.contract-upload-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contract-list {
+  display: grid;
+  gap: 12px;
+}
+
+.contract-items {
+  display: grid;
+  gap: 12px;
+}
+
+.contract-item {
+  padding: 18px;
+}
+
+.contract-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contract-link {
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contract-link:hover {
+  text-decoration: underline;
+}
+
+.producer-actions {
+  align-items: center;
+}
+
+.action-link {
+  min-height: 46px;
+}
+
+.contract-delete {
+  margin-left: auto;
+}
+
+.empty {
+  padding: 20px;
+}
+
+@media (max-width: 980px) {
+  .producer-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-item-wide {
+    grid-column: span 2;
+  }
+
+  .producer-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-item-full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .list-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .producer-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .producer-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-item-wide {
+    grid-column: auto;
+  }
+
+  .detail-item-full {
+    grid-column: auto;
+  }
+
+  .producer-panel,
+  .producer-summary {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .producer-summary {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .producer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .producer-actions > * {
+    width: 100%;
+  }
+
+  .contract-delete {
+    margin-left: 0;
+  }
+}
